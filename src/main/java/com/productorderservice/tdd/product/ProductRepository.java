@@ -1,8 +1,11 @@
 package com.productorderservice.tdd.product;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@Repository
 class ProductRepository {
 
     private Map<Long, Product> persistence = new HashMap<>();
