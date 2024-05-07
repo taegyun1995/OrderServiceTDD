@@ -1,11 +1,26 @@
 package com.productorderservice.tdd.product;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "products")
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 class Product {
 
-    private final String name;
-    private final int price;
-    private final DiscountPolicy discountPolicy;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private String name;
+
+    private int price;
+
+    private DiscountPolicy discountPolicy;
 
     public Product(AddProductRequest request) {
         this.name = request.name();
@@ -13,11 +28,4 @@ class Product {
         this.discountPolicy = request.discountPolicy();
     }
 
-    public void assignId(final Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
 }
