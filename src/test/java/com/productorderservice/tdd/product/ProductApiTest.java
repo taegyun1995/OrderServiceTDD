@@ -8,8 +8,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 
-import static com.productorderservice.tdd.product.ProductSteps.상품등록요청;
-import static com.productorderservice.tdd.product.ProductSteps.상품등록요청_생성;
+import static com.productorderservice.tdd.product.ProductSteps.*;
 
 public class ProductApiTest extends ApiTest {
 
@@ -24,16 +23,13 @@ public class ProductApiTest extends ApiTest {
 
     @Test
     void 상품조회() {
-        ProductSteps.상품등록요청( ProductSteps.상품등록요청_생성());
+        ProductSteps.상품등록요청(ProductSteps.상품등록요청_생성());
         Long productId = 1L;
 
-        final ExtractableResponse<Response> response = RestAssured.given().log().all()
-                .when()
-                .get("/products/{productId}", productId)
-                .then().log().all()
-                .extract();
+        final ExtractableResponse<Response> response = 상품수정요청(productId);
 
         Assertions.assertThat(response.statusCode()).isEqualTo(HttpStatus.OK.value());
         Assertions.assertThat(response.jsonPath().getShort("name")).isEqualTo("상품명");
     }
+
 }

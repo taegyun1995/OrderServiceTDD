@@ -26,4 +26,12 @@ public class ProductSteps {
         return request;
     }
 
+    public static ExtractableResponse<Response> 상품수정요청(Long productId) {
+        return RestAssured.given().log().all()
+                .when()
+                .get("/products/{productId}", productId)
+                .then().log().all()
+                .extract();
+    }
+
 }
