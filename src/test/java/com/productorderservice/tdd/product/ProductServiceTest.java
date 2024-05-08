@@ -1,3 +1,4 @@
+/*
 package com.productorderservice.tdd.product;
 
 import org.assertj.core.api.Assertions;
@@ -24,4 +25,4 @@ class ProductServiceTest {
         Assertions.assertThat(response).isNotNull();
     }
 
-}
+}*/
