@@ -1,7 +1,6 @@
 package com.productorderservice.tdd.product;
 
 import com.productorderservice.tdd.ApiTest;
-import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
 import org.assertj.core.api.Assertions;
@@ -22,14 +21,14 @@ public class ProductApiTest extends ApiTest {
     }
 
     @Test
-    void 상품조회() {
+    void 상품조회2() {
         ProductSteps.상품등록요청(ProductSteps.상품등록요청_생성());
         Long productId = 1L;
 
-        final ExtractableResponse<Response> response = 상품수정요청(productId);
+        final var response = ProductSteps.상품조회요청(productId);
 
         Assertions.assertThat(response.statusCode()).isEqualTo(HttpStatus.OK.value());
-        Assertions.assertThat(response.jsonPath().getShort("name")).isEqualTo("상품명");
+        Assertions.assertThat(response.jsonPath().getString("name")).isEqualTo("상품명");
     }
 
 }

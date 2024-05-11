@@ -22,11 +22,10 @@ public class ProductSteps {
         final int price = 1000;
         final DiscountPolicy discountPolicy = DiscountPolicy.NONE;
 
-        final AddProductRequest request = new AddProductRequest(name, price, discountPolicy);
-        return request;
+        return new AddProductRequest(name, price, discountPolicy);
     }
 
-    public static ExtractableResponse<Response> 상품수정요청(Long productId) {
+    public static ExtractableResponse<Response> 상품조회요청(Long productId) {
         return RestAssured.given().log().all()
                 .when()
                 .get("/products/{productId}", productId)
