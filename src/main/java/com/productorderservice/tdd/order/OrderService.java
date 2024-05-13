@@ -21,11 +21,11 @@ class OrderService {
     }
 
     @PostMapping
+    @Transactional
     public ResponseEntity<Void> createOrder(
             @RequestBody final CreateOrderRequest request
     ) {
         final Product product = orderPort.getProductById(request.productId());
-
         final Order order = new Order(product, request.quantity());
 
         orderPort.save(order);

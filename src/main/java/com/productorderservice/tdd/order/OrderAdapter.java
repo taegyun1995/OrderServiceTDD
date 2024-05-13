@@ -25,4 +25,5 @@ class OrderAdapter implements OrderPort {
     public void save(final Order order) {
         orderRepository.save(order);
     }
+
 }
