@@ -1,6 +1,7 @@
 package com.productorderservice.tdd.product;
 
 import com.productorderservice.tdd.ApiTest;
+import com.productorderservice.tdd.product.adapter.ProductRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,8 @@
 package com.productorderservice.tdd.order;
 
-import com.productorderservice.tdd.product.DiscountPolicy;
-import com.productorderservice.tdd.product.Product;
+import com.productorderservice.tdd.order.domain.Order;
+import com.productorderservice.tdd.product.domain.DiscountPolicy;
+import com.productorderservice.tdd.product.domain.Product;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 

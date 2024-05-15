@@ -1,4 +1,4 @@
-package com.productorderservice.tdd.order;
+package com.productorderservice.tdd.order.application.service;
 
 import org.springframework.util.Assert;
 

@@ -1,5 +1,7 @@
-package com.productorderservice.tdd.product;
+package com.productorderservice.tdd.product.application.service;
 
+import com.productorderservice.tdd.product.application.port.ProductPort;
+import com.productorderservice.tdd.product.domain.Product;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;

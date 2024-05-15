@@ -1,6 +1,6 @@
 package com.productorderservice.tdd.payment;
 
-import com.productorderservice.tdd.product.DiscountPolicy;
+import com.productorderservice.tdd.product.domain.DiscountPolicy;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 

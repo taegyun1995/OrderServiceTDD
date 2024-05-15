@@ -1,6 +1,6 @@
-package com.productorderservice.tdd.order;
+package com.productorderservice.tdd.order.domain;
 
-import com.productorderservice.tdd.product.Product;
+import com.productorderservice.tdd.product.domain.Product;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
