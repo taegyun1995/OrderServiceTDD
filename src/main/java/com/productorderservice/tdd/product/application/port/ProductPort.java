@@ -2,7 +2,7 @@ package com.productorderservice.tdd.product.application.port;
 
 import com.productorderservice.tdd.product.domain.Product;
 
-interface ProductPort {
+public interface ProductPort {
 
     void save(final Product product);
 

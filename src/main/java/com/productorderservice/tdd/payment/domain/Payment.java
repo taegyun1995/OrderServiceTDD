@@ -12,6 +12,7 @@ import javax.persistence.*;
 @Getter
 @Table(name = "payment")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+public
 class Payment {
 
     @Id

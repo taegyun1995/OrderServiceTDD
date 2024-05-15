@@ -1,9 +1,9 @@
 package com.productorderservice.tdd.payment.adapter;
 
-import com.productorderservice.tdd.order.domain.Order;
 import com.productorderservice.tdd.order.adapter.OrderRepository;
-import com.productorderservice.tdd.payment.Payment;
-import com.productorderservice.tdd.payment.PaymentPort;
+import com.productorderservice.tdd.order.domain.Order;
+import com.productorderservice.tdd.payment.application.port.PaymentPort;
+import com.productorderservice.tdd.payment.domain.Payment;
 import org.springframework.stereotype.Component;
 
 @Component
