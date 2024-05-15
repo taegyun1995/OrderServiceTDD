@@ -34,7 +34,6 @@ public class ProductService {
                 product.getName(),
                 product.getPrice(),
                 product.getDiscountPolicy());
-
         return ResponseEntity.ok(response);
     }
 
