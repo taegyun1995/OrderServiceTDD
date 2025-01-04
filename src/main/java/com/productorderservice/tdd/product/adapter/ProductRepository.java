@@ -1,8 +1,18 @@
 package com.productorderservice.tdd.product.adapter;
 
 import com.productorderservice.tdd.product.domain.Product;
-import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ProductRepository extends JpaRepository<Product, Long> {
+import java.util.HashMap;
+import java.util.Map;
+
+public class ProductRepository {
+
+    private Map<Long, Product> persistence = new HashMap<>();
+    private Long sequence = 0L;
+
+    public void save(final Product product) {
+        product.assignId(++sequence);
+        persistence.put(product.getId(), product);
+    }
 
 }
