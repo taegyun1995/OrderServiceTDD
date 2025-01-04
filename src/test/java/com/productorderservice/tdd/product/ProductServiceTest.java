@@ -1,30 +1,17 @@
 package com.productorderservice.tdd.product;
 
-import com.productorderservice.tdd.product.adapter.ProductAdapter;
-import com.productorderservice.tdd.product.adapter.ProductRepository;
-import com.productorderservice.tdd.product.application.port.ProductPort;
 import com.productorderservice.tdd.product.application.service.AddProductRequest;
 import com.productorderservice.tdd.product.application.service.ProductService;
 import com.productorderservice.tdd.product.domain.DiscountPolicy;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.util.Assert;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.HashMap;
-import java.util.Map;
-
+@SpringBootTest
 class ProductServiceTest {
 
+    @Autowired
     private ProductService productService;
-    private ProductPort productPort;
-    private ProductRepository productRepository;
-
-    @BeforeEach
-    void setUp() {
-        productRepository = new ProductRepository();
-        productPort = new ProductAdapter(productRepository);
-        productService = new ProductService(productPort);
-    }
 
     @Test
     void 상품등록() {

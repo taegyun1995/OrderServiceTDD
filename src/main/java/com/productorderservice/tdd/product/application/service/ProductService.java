@@ -2,7 +2,9 @@ package com.productorderservice.tdd.product.application.service;
 
 import com.productorderservice.tdd.product.application.port.ProductPort;
 import com.productorderservice.tdd.product.domain.Product;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ProductService {
 
     private final ProductPort productPort;
@@ -13,6 +15,8 @@ public class ProductService {
 
     public void addProduct(AddProductRequest request) {
         final Product product = new Product(request.name(), request.price(), request.discountPolicy());
+
+        productPort.save(product);
     }
 
 }
